@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHAON'S LEARNING POINT</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+header {
+  background: #092b50;
+  color: white;
+  padding: 22px 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  color: #dce9f7;
+}
+
+nav {
+  background: #124675;
+  padding: 14px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 45px 15px 25px;
+}
+
+.hero h2 {
+  font-size: 30px;
+  color: #103b67;
+}
+
+.hero p {
+  color: #65748b;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+  repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #172033;
+  box-shadow: 0 3px 15px #00000012;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 20px #00000020;
+}
+
+.card .icon {
+  font-size: 32px;
+}
+
+.card h3 {
+  color: #124675;
+}
+
+.card p {
+  color: #65748b;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 40px;
+  background: #092b50;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>SHAON'S LEARNING POINT</h1>
+  <p>Learn • Practice • Grow</p>
+</header>
+
+<nav>
+  <a href="index.html">হোম</a>
+  <a href="#courses">কোর্স</a>
+  <a href="#about">আমাদের সম্পর্কে</a>
+  <a href="#contact">যোগাযোগ</a>
+</nav>
+
+<section class="hero">
+  <h2>আমাদের শেখার বিষয়সমূহ</h2>
+  <p>বেসিক থেকে অ্যাডভান্স লেভেল পর্যন্ত
+  ধাপে ধাপে শেখার একটি প্ল্যাটফর্ম</p>
+</section>
+
+<main class="container" id="courses">
+  <div class="grid" id="courseList"></div>
+</main>
+
+<footer id="about">
+  <h3>SHAON'S LEARNING POINT</h3>
+  <p>জ্ঞান অর্জন হোক সবার জন্য সহজ।</p>
+  <p id="contact">Contact Us</p>
+  <p>© 2026 Shaon's Learning Point</p>
+</footer>
+
+<script>
+
+// নতুন অপশন যোগ করতে নিচের তালিকায়
+// নতুন একটি বিষয় যুক্ত করলেই হবে।
+
+const categories = [
+  {
+    name: "Electrical Engineering",
+    icon: "⚡",
+    description: "Electrical Basics, Circuit, Motor, Generator, Transformer ও Protection",
+    link: "electrical.html"
+  },
+  {
+    name: "গণিত ও সূত্র সমাধান",
+    icon: "📐",
+    description: "Basic Math, Algebra, Geometry ও বিভিন্ন সূত্রের সমাধান",
+    link: "mathematics.html"
+  },
+  {
+    name: "চাকরির প্রস্তুতি",
+    icon: "🎯",
+    description: "সরকারি চাকরি, MCQ, Written Exam ও Interview Preparation",
+    link: "jobs.html"
+  },
+  {
+    name: "Technical Skills",
+    icon: "💻",
+    description: "কম্পিউটার, প্রযুক্তি ও ব্যবহারিক দক্ষতা",
+    link: "technical.html"
+  },
+  {
+    name: "English & বাংলা",
+    icon: "📚",
+    description: "Grammar, Vocabulary, Speaking ও বাংলা ব্যাকরণ",
+    link: "english.html"
+  },
+  {
+    name: "সাধারণ জ্ঞান",
+    icon: "🌍",
+    description: "বাংলাদেশ, আন্তর্জাতিক বিষয় ও সাধারণ জ্ঞান",
+    link: "general-knowledge.html"
+  }
+];
+
+const courseList = document.getElementById("courseList");
+
+categories.forEach(course => {
+
+  courseList.innerHTML += `
+    <a class="card" href="${course.link}">
+      <div class="icon">${course.icon}</div>
+      <h3>${course.name}</h3>
+      <p>${course.description}</p>
+      <strong>বিস্তারিত পড়ুন →</strong>
+    </a>
+  `;
+
+});
+
+</script>
+
+</body>
+</html>
